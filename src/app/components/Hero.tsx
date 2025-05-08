@@ -50,7 +50,7 @@ export default function Hero() {
       ))}
 
       {/* Contenido */}
-      <div className="relative z-20 flex flex-col gap-7 items-center justify-center h-full text-white text-center px-6 max-w-4xl mx-auto">
+      <div className="relative  z-20 flex flex-col gap-7 items-center justify-center h-full text-white text-center px-6 max-w-4xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,6 @@ export default function Hero() {
         >
           Limpieza que cuida tu entorno y el planeta.
         </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
