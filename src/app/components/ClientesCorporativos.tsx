@@ -80,10 +80,10 @@ const ClientesCorporativos = () => {
       </div>
 
       {/* ✅ Botón debajo del slider */}
-      <div className="text-center">
-        <button className="bg-[#1b4832] hover:bg-[#2a3a32] cursor-pointer transition-colors text-[#e3bf5f] px-6 py-3 rounded-sm font-medium">
+      <div className="text-center mt-10">
+        <a href='/contacto' className="bg-[#1b4832] hover:bg-[#2a3a32] cursor-pointer transition-colors text-[#e3bf5f] px-6 py-3 rounded-sm font-medium">
           Pedí tu cotización
-        </button>
+        </a>
       </div>
     </section>
   )

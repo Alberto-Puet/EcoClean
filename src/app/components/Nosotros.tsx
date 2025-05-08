@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -17,8 +18,10 @@ const fadeInUp = {
   }),
 };
 
-
 const Nosotros = () => {
+  const countUpRef = useRef(null);
+  const isInView = useInView(countUpRef, { once: true });
+
   return (
     <div className="relative">
       <motion.div
@@ -41,22 +44,18 @@ const Nosotros = () => {
       <section className="bg-[#0D1F1C] text-white py-20 px-6 md:px-12 relative">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center justify-center">
           {/* Imagen principal */}
-          <motion.div
+          <div
             className="relative w-full h-[350px] md:h-[450px] mx-auto"
-            custom={0}
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
           >
             <div className="w-full h-full rounded-xl overflow-hidden shadow-lg relative">
               <Image
                 src="/nosotros.jpg"
                 alt="Equipo trabajando con plantas"
                 fill
-                className="absolute object-cover rounded-xl z-50 "
+                className="absolute object-cover rounded-xl z-50"
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Texto informativo */}
           <div className="text-center md:text-left relative z-100">
@@ -84,29 +83,32 @@ const Nosotros = () => {
               hogar y la industria.
             </motion.p>
 
+            {/* Contadores */}
             <motion.div
-  className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-7 my-7"
-  custom={3}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeInUp}
->
-  <div className="text-center">
-    <span className="text-4xl font-bold text-emerald-400">
-      <CountUp end={25} duration={2} />+
-    </span>
-    <p className="text-sm text-[#e3bf5f]">Años de experiencia</p>
-  </div>
-  <div className="text-center">
-    <span className="text-4xl font-bold text-emerald-400">
-      <CountUp end={100} duration={2.5} />%
-    </span>
-    <p className="text-sm text-[#e3bf5f]">Clientes satisfechos</p>
-  </div>
-</motion.div>
+              ref={countUpRef}
+              className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-7 my-7"
+              custom={3}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <div className="text-center">
+                <span className="text-4xl font-bold text-emerald-400">
+                  {isInView && <CountUp end={15} duration={4}/>}+
+                </span>
+                <p className="text-sm text-[#e3bf5f]">Años de experiencia</p>
+              </div>
+              <div className="text-center">
+                <span className="text-4xl font-bold text-emerald-400">
+                  {isInView && <CountUp end={100} duration={2.5} />}%
+                </span>
+                <p className="text-sm text-[#e3bf5f]">Clientes satisfechos</p>
+              </div>
+            </motion.div>
 
-            <motion.button
+            <motion.a
+              href="/sobre-nosotros"
               className="mt-8 bg-[#1b4832] hover:bg-[#2a3a32] cursor-pointer transition-colors text-[#e3bf5f] px-6 py-3 rounded-sm font-medium mx-auto md:mx-0"
               custom={4}
               initial="hidden"
@@ -115,7 +117,7 @@ const Nosotros = () => {
               variants={fadeInUp}
             >
               Conocé más
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </section>

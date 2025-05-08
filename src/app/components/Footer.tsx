@@ -14,10 +14,9 @@ const Footer = () => {
         <div className="flex-1">
           <h3 className="text-lg font-semibold mb-3 text-yellow-400">Navegación</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#inicio" className="hover:text-yellow-400 transition-colors">Inicio</a></li>
-            <li><a href="#productos" className="hover:text-yellow-400 transition-colors">Productos</a></li>
-            <li><a href="#blog" className="hover:text-yellow-400 transition-colors">Blog</a></li>
-            <li><a href="#contacto" className="hover:text-yellow-400 transition-colors">Contacto</a></li>
+            <li><a href="/" className="hover:text-yellow-400 transition-colors">Inicio</a></li>
+            <li><a href="/productos" className="hover:text-yellow-400 transition-colors">Productos</a></li>
+            <li><a href="/contacto" className="hover:text-yellow-400 transition-colors">Contacto</a></li>
           </ul>
         </div>
 

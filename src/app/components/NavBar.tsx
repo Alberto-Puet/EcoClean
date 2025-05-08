@@ -55,9 +55,9 @@ const Navbar = () => {
               <IoIosArrowDown className="ml-1" />
             </div>
             <ul className="absolute top-full left-0 mt-2 bg-slate-900 text-[#e3bf5f] rounded shadow-md transition-all duration-300 min-w-[200px] z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 hover:opacity-100 hover:visible hover:translate-y-1">
-              <li className="px-4 py-2 hover:bg-slate-800 cursor-pointer"><Link href="/landing-pages">Para el Hogar</Link></li>
-              <li className="px-4 py-2 hover:bg-slate-800 cursor-pointer"><Link href="/sitios-web">Industriales</Link></li>
-              <li className="px-4 py-2 hover:bg-slate-800 cursor-pointer"><Link href="/sitios-web">Estetica Vehicular</Link></li>
+              <li className="px-4 py-2 hover:bg-slate-800 cursor-pointer"><Link href="/productos/para-el-hogar">Para el Hogar</Link></li>
+              <li className="px-4 py-2 hover:bg-slate-800 cursor-pointer"><Link href="/productos/industriales">Industriales</Link></li>
+              <li className="px-4 py-2 hover:bg-slate-800 cursor-pointer"><Link href="/productos/estetica-vehicular">Estetica Vehicular</Link></li>
             </ul>
           </li>
           <li><a href="/sobre-nosotros">Nosotros</a></li>
@@ -129,9 +129,9 @@ const Navbar = () => {
                       </button>
                       {dropdownOpen && (
                         <div className="mt-2 ml-4 flex flex-col gap-5 text-sm  rounded   text-[#e3bf5f]">
-                          <Link href="/landing-pages">Para el Hogar</Link>
-                          <Link href="/sitios-web">Industriales</Link>
-                          <Link href="/sitios-web">Estetica Vehicular</Link>
+                          <Link href="/productos/para-el-hogar">Para el Hogar</Link>
+                          <Link href="/productos/industriales">Industriales</Link>
+                          <Link href="/productos/estetica-vehicular">Estetica Vehicular</Link>
                         </div>
                       )}
                     </motion.div>

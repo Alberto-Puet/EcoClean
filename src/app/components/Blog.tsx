@@ -1,32 +1,33 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLeaf,
-  faTriangleExclamation,
-  faCircleInfo,
-} from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-const cards = [
+const entradasBlog = [
   {
-    titulo: "Limpieza sustentable",
-    descripcion: "Guía rápida para comenzar de forma ecológica.",
-    icono: faLeaf,
-    link: "/blog",
+    titulo: "Cómo elegir productos de limpieza ecológicos para tu hogar",
+    descripcion:
+      "Descubrí por qué los productos biodegradables son la mejor opción para cuidar tu salud y el medio ambiente.",
+    fecha: "06 May",
+    imagen: "/blog1.jpg",
+    link: "/blog/limpieza-ecologica",
   },
   {
-    titulo: "Errores comunes",
-    descripcion: "Evitá los químicos más dañinos al limpiar.",
-    icono: faTriangleExclamation,
-    link: "/blog",
+    titulo: "5 beneficios de usar detergente natural en la cocina",
+    descripcion:
+      "Menos químicos, más seguridad: conocé las ventajas de cambiar tu detergente por una alternativa sostenible.",
+    fecha: "28 Abr",
+    imagen: "/blog2.jpg",
+    link: "/blog/detergente-natural",
   },
   {
-    titulo: "¿Qué es biodegradable?",
-    descripcion: "Aprendé cómo reconocer productos responsables.",
-    icono: faCircleInfo,
-    link: "/blog",
+    titulo: "Reducí tu huella ambiental con hábitos de limpieza responsables",
+    descripcion:
+      "Pequeñas acciones diarias que, combinadas con productos biodegradables, marcan una gran diferencia.",
+    fecha: "15 Abr",
+    imagen: "/blog3.jpg",
+    link: "/blog/huella-ambiental",
   },
 ];
 
@@ -34,39 +35,43 @@ const Blog = () => {
   return (
     <section className="bg-[#0D1F1C] text-white py-20 px-4 sm:px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-semibold mb-4">
-          Blog / Consejos ecológicos
-        </h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">Últimas novedades</h2>
         <p className="text-lg text-gray-300">
-          Consejos simples para transformar tu limpieza en algo consciente.
+          Consejos, novedades y curiosidades sobre el mundo de la limpieza ecológica y responsable.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
-        {cards.map((card, i) => (
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {entradasBlog.map((entrada, index) => (
           <motion.div
-            key={i}
+            key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2, duration: 0.6 }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-[#183d2b] rounded-2xl p-6 flex items-start gap-4 shadow hover:shadow-lg transition"
+            className="bg-[#1b4832] rounded-2xl shadow overflow-hidden group"
           >
-            <FontAwesomeIcon
-              icon={card.icono}
-              className="text-[#e3bf5f] text-3xl mt-1"
-            />
-            <div className="flex-grow">
-              <h3 className="text-lg font-semibold text-[#e3bf5f] mb-1">
-                {card.titulo}
-              </h3>
-              <p className="text-sm text-white mb-2">{card.descripcion}</p>
+            <div className="relative overflow-hidden">
+              <Image
+                src={entrada.imagen}
+                alt={entrada.titulo}
+                width={500}
+                height={300}
+                className="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:rotate-2"
+              />
+              <div className="absolute bottom-2 left-4 bg-[#7c865e] text-white w-14 h-14 rounded-full flex flex-col items-center justify-center text-sm font-bold shadow-md z-10">
+                <span>{entrada.fecha.split(" ")[0]}</span>
+                <span className="text-xs ">{entrada.fecha.split(" ")[1]}</span>
+              </div>
+            </div>
+            <div className="p-6 pt-8">
+              <h3 className="text-lg font-bold mb-2">{entrada.titulo}</h3>
+              <p className="text-sm text-gray-300 mb-4">{entrada.descripcion}</p>
               <Link
-                href={card.link}
-                className="text-sm text-white font-medium hover:underline underline-offset-4 flex items-center gap-1"
+                href={entrada.link}
+                className="text-sm font-medium text-[#e3bf5f] hover:underline flex items-center gap-1"
               >
-                Learn More
-                <span className="text-[#e3bf5f]">→</span>
+                Leer más <span>➔</span>
               </Link>
             </div>
           </motion.div>

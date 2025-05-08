@@ -54,9 +54,9 @@ const Productos = () => {
 
       {/* Botón debajo del grid */}
       <div className="flex justify-center mt-10">
-        <button className="bg-[#1b4832] hover:bg-[#2a3a32] cursor-pointer text-[#e3bf5f] px-6 py-3 rounded-sm text-lg transition">
+        <a href='/productos' className="bg-[#1b4832] hover:bg-[#2a3a32] cursor-pointer text-[#e3bf5f] px-6 py-3 rounded-sm text-lg transition">
           Ver productos
-        </button>
+        </a>
       </div>
       </div>
     </section>

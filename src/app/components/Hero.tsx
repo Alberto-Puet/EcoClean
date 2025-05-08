@@ -75,7 +75,7 @@ export default function Hero() {
           transition={{ delay: 1, duration: 1 }}
         >
           <Link
-            href="#"
+            href="/asesoria"
             className="bg-[#1b4832] hover:bg-[#2a3a32] text-[#e3bf5f]  transition-all duration-300 px-6 py-3 rounded-md shadow-lg font-medium"
           >
             Pedí una asesoría
