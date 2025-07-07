@@ -58,7 +58,7 @@ export default function Testimonios() {
                     <Star key={i} size={18} fill="#cf7806" />
                   ))}
                 </div>
-                <p className="text-gray-300 text-lg italic mb-4">"{t.texto}"</p>
+                <p className="text-gray-300 text-lg italic mb-4">&quot;{t.texto}&quot;</p>
                 <p className="font-semibold text-[#cf7806]">{t.nombre}</p>
               </div>
             </SwiperSlide>
