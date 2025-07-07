@@ -51,7 +51,7 @@ export default function LimpiezaEcologicaPage() {
           <motion.p variants={fadeInUp} custom={4}>
             En un mundo donde el impacto ambiental de nuestras decisiones diarias es cada vez más evidente,
             optar por productos de limpieza ecológicos se ha convertido en una acción concreta para contribuir al cambio.
-            Pero, ¿qué significa realmente que un producto sea "ecológico"?
+            Pero, ¿qué significa realmente que un producto sea &quot;ecológico&quot;?
           </motion.p>
 
           <motion.h2 className="text-2xl font-semibold text-[#e3bf5f]" variants={fadeInUp} custom={5}>

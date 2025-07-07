@@ -5,3 +5,6 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+module.exports = {
+  reactDevOverlay: false, // ⚠️ Esta opción ya no se usa en las últimas versiones
+};
