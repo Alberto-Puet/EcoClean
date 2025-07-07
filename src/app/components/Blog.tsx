@@ -67,12 +67,12 @@ const Blog = () => {
             <div className="p-6 pt-8">
               <h3 className="text-lg font-bold mb-2">{entrada.titulo}</h3>
               <p className="text-sm text-gray-300 mb-4">{entrada.descripcion}</p>
-              <Link
+              {/* <Link
                 href={entrada.link}
                 className="text-sm font-medium text-[#e3bf5f] hover:underline flex items-center gap-1"
               >
                 Leer más <span>➔</span>
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
         ))}
